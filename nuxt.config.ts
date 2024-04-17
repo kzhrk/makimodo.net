@@ -1,8 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { readdirSync } from 'fs'
+
+const routes = Array(readdirSync('./posts').length).fill(0).map((_, i) => `/episode/${i + 1}`);
+
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
   modules: ['@nuxtjs/tailwindcss'],
+  generate: {
+    routes
+  },
   vite: {
     plugins: [
       {
