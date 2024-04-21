@@ -1,10 +1,11 @@
 <script lang="ts" setup>
+import { format } from 'date-fns'
+
 const res = await useFetch('/api/posts');
 const data = res.data;
 
 function getFormatedDate(dateString: string) {
-  const date = new Date(dateString);
-  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
+  return format(dateString, 'yyyy年M月d日');
 }
 </script>
 
