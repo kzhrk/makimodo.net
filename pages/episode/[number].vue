@@ -58,6 +58,8 @@ onMounted(() => {
   const audio = document.querySelector('audio');
   const anchors = document.querySelector('table')?.querySelectorAll('a');
 
+  window.twttr.widgets.load();
+
   // GTM
   if (audio) {
     const episode = route.params.number;
