@@ -19,7 +19,7 @@ function getFormatedDate(dateString: string) {
       <time class="text-sm" :datetime="episode.date">{{ getFormatedDate(episode.date) }}</time>
       <p class="mt-2">{{ episode.description }}</p>
       <ul class="mt-2 flex gap-5">
-        <li v-for="(id, index) in episode.actor_ids" :key="index">
+        <li v-for="(id, index) in episode.actorIds" :key="index">
           <figure class="text-center">
             <img class="w-10 rounded-full" :src="`/images/actors/${id}.jpg`" :alt="`${id} のイメージ`">
           </figure>

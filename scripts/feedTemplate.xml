@@ -28,7 +28,7 @@
       <pubDate><%= episode.date %></pubDate>
       <description><%= episode.content %></description>
       <guid isPermaLink="true">https://makimodo.net/episode/<%= episode.episodeNumber %></guid>
-      <enclosure url="https://d2pbwgl7adh1pt.cloudfront.net<%= episode.audio_file_path %>" length="<%= episode.audio_file_size %>" type="audio/mp3"/>
+      <enclosure url="https://d2pbwgl7adh1pt.cloudfront.net<%= episode.audioFilePath %>" length="<%= episode.audioFileSize %>" type="audio/mp3"/>
       <itunes:author>Kazuhiro Kobayashi - info@kzhrk.com</itunes:author>
       <itunes:subtitle><%= episode.description %></itunes:subtitle>
       <itunes:duration><%= episode.duration %></itunes:duration>

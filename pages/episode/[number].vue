@@ -4,7 +4,7 @@ const res = await useFetch(`/api/posts/${route.params.number}`);
 const data = res.data;
 const date = new Date(data.value.date);
 const formatedDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
-const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${ data.value.audio_file_path }`
+const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${ data.value.audioFilePath }`
 
 const title = `${data.value.title} | インターネットを巻き戻す Podcast`;
 const description = data.value.description;
@@ -104,7 +104,7 @@ onMounted(() => {
     <section class="mt-8">
       <h2 class="mb-4 text-xl">出演者</h2>
       <ul class="flex gap-5">
-        <li v-for="(id, index) in data.actor_ids" :key="index">
+        <li v-for="(id, index) in data.actorIds" :key="index">
           <figure class="text-center">
             <img class="w-16 rounded-full" :src="`/images/actors/${id}.jpg`" :alt="`${id} のイメージ`">
             <figcaption class="mt-1 text-sm">{{ id }}</figcaption>
