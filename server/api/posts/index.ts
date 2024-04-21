@@ -1,5 +1,4 @@
 import { readdirSync, readFileSync } from 'node:fs'
-import { parse } from "marked";
 import parseMD from "parse-md";
 
 export default defineEventHandler(async (event) => {

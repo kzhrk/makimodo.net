@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:media="http://search.yahoo.com/mrss/" xml:lang="ja">
+  <channel>
+    <atom:link href="https://makimodo.net/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://makimodo.net/</link>
+    <title>インターネットを巻き戻すPodcast</title>
+    <description>インターネットを巻き戻すPodcast</description>
+    <media:keywords>kzhrk,インターネット,podcast,makimodo,インターネットを巻き戻すPodcast</media:keywords>
+    <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category>
+    <language>ja</language>
+    <itunes:subtitle>インターネットを巻き戻すPodcast</itunes:subtitle>
+    <itunes:author>Kazuhiro Kobayashi - info@kzhrk.com</itunes:author>
+    <itunes:summary>インターネットを巻き戻すPodcast</itunes:summary>
+    <itunes:keywords>kzhrk,インターネット,podcast,makimodo,インターネットを巻き戻すPodcast</itunes:keywords>
+    <itunes:owner>
+      <itunes:name>Kazuhiro Kobayashi - info@kzhrk.com</itunes:name>
+      <itunes:email>info@kzhrk.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://makimodo.net/images/artwork.png" />
+    <itunes:category text="Technology"/>
+    <itunes:explicit>no</itunes:explicit>
+    <% episodes.forEach(function(episode){ %><item>
+      <title><%= episode.title %></title>
+      <link>https://makimodo.net/episode/<%= episode.episodeNumber %></link>
+      <pubDate><%= episode.date %></pubDate>
+      <description><%= episode.content %></description>
+      <guid isPermaLink="true">https://makimodo.net/episode/<%= episode.episodeNumber %></guid>
+      <enclosure url="https://d2pbwgl7adh1pt.cloudfront.net<%= episode.audio_file_path %>" length="<%= episode.audio_file_size %>" type="audio/mp3"/>
+      <itunes:author>Kazuhiro Kobayashi - info@kzhrk.com</itunes:author>
+      <itunes:subtitle><%= episode.description %></itunes:subtitle>
+      <itunes:duration><%= episode.duration %></itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <media:thumbnail url="https://makimodo.net/images/artwork.png"/>
+    </item>
+    <% }); %>
+  </channel>
+</rss>

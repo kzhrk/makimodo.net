@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "create-feed": "ts-node ./scripts/createFeed.mjs"
   },
   "dependencies": {
     "nuxt": "^3.11.2",
@@ -16,7 +17,9 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.11.4",
+    "ejs": "^3.1.10",
     "marked": "^12.0.1",
-    "parse-md": "^3.0.3"
+    "parse-md": "^3.0.3",
+    "ts-node": "^10.9.2"
   }
 }
