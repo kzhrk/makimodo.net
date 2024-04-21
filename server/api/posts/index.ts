@@ -6,9 +6,9 @@ export default defineEventHandler(async () => {
   return pages.map(p => {
     const path = `./posts/${p}.md`;
     const file = readFileSync(path);
-    const { metadata } = parseMD(file.toString());
+    const { metadata } = parseMD(file.toString()) as { metadata: Record<string, unknown> };
     return { 
-      metadata,
+      ...metadata,
       episodeNumber: p
     }
   })
