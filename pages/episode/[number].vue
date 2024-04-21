@@ -48,8 +48,8 @@ useHead(() => ({
 function getSecondsFromTime(time: string) {
   const [seconds, minutes, hours] = time.split(':').reverse();
   let currentTime = Number.parseInt(seconds, 10);
-  if (minutes) currentTime += Number.parseInt(60 * Number.parseInt(minutes, 10), 10);
-  if (hours) currentTime += Number.parseInt(60 * 60 * Number.parseInt(hours, 10), 10);
+  if (minutes) currentTime += 60 * Number.parseInt(minutes, 10);
+  if (hours) currentTime += 60 * 60 * Number.parseInt(hours, 10);
   return currentTime;
 }
 
@@ -69,15 +69,16 @@ onMounted(() => {
   }
 
   // Chapters
-  if (anchors) {
-    [...anchors].forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        const time = e.target.href.replace(/.*#t=([\d:]+).*/, '$1');
+  if (anchors && audio) {
+    for (const anchor of anchors) {
+      anchor.addEventListener('click', (event) => {
+        const target = event.target as HTMLAnchorElement;
+        const time = target.href.replace(/.*#t=([\d:]+).*/, '$1');
         const currentTime = getSecondsFromTime(time);
         audio.currentTime = currentTime;
         audio.play()
-      })
-    })
+      }) 
+    }
   }
 })
 </script>

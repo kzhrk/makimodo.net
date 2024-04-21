@@ -28,7 +28,3 @@ function getFormatedDate(dateString: string) {
     </section>
   </div>
 </template>
-
-<style scoped>
-
-</style>
