@@ -13,6 +13,7 @@ const episodes = numbers.map(p => {
   const html = parse(content);
   return {
     ...metadata,
+    date: new Date(metadata.date).toUTCString(),
     episodeNumber: p,
     content: html
   }

@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-const route = useRoute();
 const res = await useFetch('/api/posts');
 const data = res.data;
 
