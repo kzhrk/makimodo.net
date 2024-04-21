@@ -1,3 +1,45 @@
+<script lang="ts" setup>
+const title = 'インターネットを巻き戻す Podcast';
+const description = 'インターネットのニュースや雑談を話す Podcast です';
+
+useHead(() => ({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  },{
+    name: 'twitter:card',
+    content: 'summary_large_image'
+  }, {
+    name: 'twitter:description',
+    content: description
+  }, {
+    name: 'twitter:image',
+    content: 'https://makimodo.net/images/logo.png'
+  }, {
+    name: 'twitter:title',
+    content: title
+  },{
+    property: 'og:image',
+    content: 'https://makimodo.net/images/logo.png'
+  },{
+    property: 'og:site_name',
+    content: 'インターネットを巻き戻すPodcast'
+  },{
+    property: 'og:type',
+    content: 'blog'
+  },{
+    property: 'og:url',
+    content: 'https://makimodo.net/'
+  }],
+  link: [{
+    rel: 'alternate',
+    type: 'application/rss+xml',
+    href: 'https://makimodo.net/feed.xml'
+  }]
+}))
+</script>
+
 <template>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJ747KN"
@@ -7,3 +49,9 @@
     <nuxt-page />
   </nuxt-layout>
 </template>
+
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Hiragino Kaku Gothic ProN, meiryo, sans-serif;
+}
+</style>

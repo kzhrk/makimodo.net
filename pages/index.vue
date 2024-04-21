@@ -9,23 +9,24 @@ function getFormatedDate(dateString: string) {
 </script>
 
 <template>
-  <section v-for="({ metadata, episodeNumber }, i) in data" :key="i">
-    <h1>
-      <a :href="`/episode/${episodeNumber}`">
-        {{ metadata.title }}
-      </a>
-    </h1>
-    <time :datetime="metadata.date">{{ getFormatedDate(metadata.date) }}</time>
-    <p>{{ metadata.description }}</p>
-    <ul class="flex gap-5">
-      <li v-for="(id, index) in metadata.actor_ids" :key="index">
-        <figure class="text-center">
-          <img class="w-12 rounded-full" :src="`/images/actors/${id}.jpg`" :alt="`${id} のイメージ`">
-          <figcaption class="mt-1 text-sm">{{ id }}</figcaption>
-        </figure>
-      </li>
-    </ul>
-  </section>
+  <div class="p-12 flex flex-col gap-16">
+    <section v-for="({ metadata, episodeNumber }, i) in data" :key="i">
+      <h1 class="text-2xl">
+        <a class="text-link underline hover:no-underline" :href="`/episode/${episodeNumber}`">
+          {{ metadata.title }}
+        </a>
+      </h1>
+      <time class="text-sm" :datetime="metadata.date">{{ getFormatedDate(metadata.date) }}</time>
+      <p class="mt-2">{{ metadata.description }}</p>
+      <ul class="mt-2 flex gap-5">
+        <li v-for="(id, index) in metadata.actor_ids" :key="index">
+          <figure class="text-center">
+            <img class="w-10 rounded-full" :src="`/images/actors/${id}.jpg`" :alt="`${id} のイメージ`">
+          </figure>
+        </li>
+      </ul>
+    </section>
+  </div>
 </template>
 
 <style scoped>

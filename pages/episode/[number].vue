@@ -5,6 +5,81 @@ const data = res.data;
 const date = new Date(data.value.date);
 const formatedDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDay()}日`
 const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${ data.value.audio_file_path }`
+
+const title = `${data.value.title} | インターネットを巻き戻す Podcast`;
+const description = data.value.description;
+useHead(() => ({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  },{
+    name: 'twitter:card',
+    content: 'summary_large_image'
+  }, {
+    name: 'twitter:description',
+    content: description
+  }, {
+    name: 'twitter:image',
+    content: 'https://makimodo.net/images/logo.png'
+  }, {
+    name: 'twitter:title',
+    content: title
+  },{
+    property: 'og:image',
+    content: 'https://makimodo.net/images/logo.png'
+  },{
+    property: 'og:site_name',
+    content: 'インターネットを巻き戻すPodcast'
+  },{
+    property: 'og:type',
+    content: 'blog'
+  },{
+    property: 'og:url',
+    content: 'https://makimodo.net/'
+  }],
+  link: [{
+    rel: 'alternate',
+    type: 'application/rss+xml',
+    href: 'https://makimodo.net/feed.xml'
+  }]
+}))
+
+function getSecondsFromTime(time: string) {
+  const [seconds, minutes, hours] = time.split(':').reverse();
+  let currentTime = Number.parseInt(seconds, 10);
+  if (minutes) currentTime += Number.parseInt(60 * Number.parseInt(minutes, 10), 10);
+  if (hours) currentTime += Number.parseInt(60 * 60 * Number.parseInt(hours, 10), 10);
+  return currentTime;
+}
+
+onMounted(() => {
+  const audio = document.querySelector('audio');
+  const anchors = document.querySelector('table')?.querySelectorAll('a');
+
+  // GTM
+  if (audio) {
+    const episode = route.params.number;
+    audio.addEventListener('play', () => {
+      window.dataLayer.push({
+        episode: episode,
+        event: 'play_episode'
+      });
+    });
+  }
+
+  // Chapters
+  if (anchors) {
+    [...anchors].forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const time = e.target.href.replace(/.*#t=([\d:]+).*/, '$1');
+        const currentTime = getSecondsFromTime(time);
+        audio.currentTime = currentTime;
+        audio.play()
+      })
+    })
+  }
+})
 </script>
 
 <template>
@@ -20,7 +95,7 @@ const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${ data.value.audio_file_
       controls
     />
     <div class="mt-4 text-right text-sm">
-      <a class="text-blue underline" :href="audioUrl">MP3 ファイルをダウンロード</a>
+      <a class="text-link underline hover:no-underline" :href="audioUrl">MP3 ファイルをダウンロード</a>
     </div>
     <section class="mt-8">
       <h2 class="mb-4 text-xl">内容紹介</h2>
@@ -48,15 +123,28 @@ const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${ data.value.audio_file_
 
 <style>
 .html h2 {
-  @apply text-xl mb-4;
+  @apply text-xl mt-8 mb-4;
 }
 .html ul {
   @apply pl-4;
 }
 .html ul li {
-  @apply mt-2 text-blue underline list-disc;
+  @apply mt-2 list-disc;
 }
 .html ul li::marker {
-  @apply text-gray-dark;
+  @apply text-gray-700;
+}
+.html a {
+  @apply text-link underline hover:no-underline;
+}
+.html table th,
+.html table td {
+  @apply p-2 border border-gray-400;
+}
+.html table thead {
+  @apply bg-gray-200 text-left;
+}
+.html table tbody tr:nth-child(even) {
+  @apply bg-gray-50;
 }
 </style>
