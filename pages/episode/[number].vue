@@ -79,7 +79,7 @@ onMounted(() => {
         const time = target.href.replace(/.*#t=([\d:]+).*/, '$1');
         const currentTime = getSecondsFromTime(time);
         audio.currentTime = currentTime;
-        audio.play()
+        audio.play();
       }) 
     }
   }
@@ -117,6 +117,23 @@ onMounted(() => {
       </ul>
     </section>
     <section class="mt-8 html" v-html="data.html" />
+    <section v-if="data.chapters && data.chapters.length > 0" class="mt-8">
+      <h2 class="mb-4 text-xl">Chapters</h2>
+      <table class="chapter-table">
+        <thead>
+          <tr>
+            <th>name</th>
+            <th>time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(chapter, i) in data.chapters" :key="i">
+            <td><a :href="`#t=${chapter.time}`">{{ chapter.value }}</a></td>
+            <td>{{ chapter.time }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
     <div class="mt-8">
       <a class="twitter-share-button" :href="`https://twitter.com/intent/tweet?hashtags=makimodo&url=https://makimodo.net/episode/${ $route.params.number }&text=${ data.title }`">
         Tweet
@@ -141,14 +158,20 @@ onMounted(() => {
 .html a {
   @apply text-link underline hover:no-underline;
 }
-.html table th,
-.html table td {
+</style>
+
+<style scoped>
+.chapter-table th,
+.chapter-table td {
   @apply p-2 border border-gray-400;
 }
-.html table thead {
+.chapter-table thead {
   @apply bg-gray-200 text-left;
 }
-.html table tbody tr:nth-child(even) {
+.chapter-table tbody tr:nth-child(even) {
   @apply bg-gray-50;
+}
+.chapter-table a {
+  @apply text-link underline hover:no-underline;
 }
 </style>

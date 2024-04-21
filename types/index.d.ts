@@ -7,4 +7,8 @@ interface Metadata {
   duration: string;
   layout: string;
   title: string;
+  chapters?: {
+    value: string;
+    time: string;
+  }[]
 }
