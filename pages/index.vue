@@ -4,7 +4,7 @@ const data = res.data;
 
 function getFormatedDate(dateString: string) {
   const date = new Date(dateString);
-  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDay()}日`
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
 }
 </script>
 

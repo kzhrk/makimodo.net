@@ -3,7 +3,7 @@ const route = useRoute();
 const res = await useFetch(`/api/posts/${route.params.number}`);
 const data = res.data;
 const date = new Date(data.value.date);
-const formatedDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDay()}日`
+const formatedDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
 const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${ data.value.audio_file_path }`
 
 const title = `${data.value.title} | インターネットを巻き戻す Podcast`;
