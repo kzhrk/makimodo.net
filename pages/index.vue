@@ -1,14 +1,12 @@
 <script lang="ts" setup>
 const route = useRoute();
-const page = route.query.page || 1;
-const res = await useFetch(`/api/posts?page=${page}`);
+const res = await useFetch('/api/posts');
 const data = res.data;
 
 function getFormatedDate(dateString: string) {
   const date = new Date(dateString);
   return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDay()}日`
 }
-
 </script>
 
 <template>

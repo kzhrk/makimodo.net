@@ -1,6 +1,7 @@
 import { readdirSync } from 'node:fs'
 
-const routes = Array(readdirSync('./posts').length).fill(0).map((_, i) => `/episode/${i + 1}`);
+const posts = readdirSync('./posts');
+const routes = Array(posts.length).fill(0).map((_, i) => `/episode/${i + 1}`);
 
 export default defineNuxtConfig({
   app: {
