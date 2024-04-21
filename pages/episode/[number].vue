@@ -38,6 +38,11 @@ const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${ data.value.audio_file_
       </ul>
     </section>
     <section class="mt-8 html" v-html="data.html" />
+    <div class="mt-8">
+      <a class="twitter-share-button" :href="`https://twitter.com/intent/tweet?hashtags=makimodo&url=https://makimodo.net/episode/${ $route.params.number }&text=${ data.title }`">
+        Tweet
+      </a>
+    </div>
   </section>
 </template>
 
