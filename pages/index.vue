@@ -13,9 +13,9 @@ function getFormatedDate(dateString: string) {
   <div class="p-12 flex flex-col gap-16">
     <section v-for="(episode, i) in data" :key="i">
       <h1 class="text-2xl">
-        <a class="text-link underline hover:no-underline" :href="`/episode/${episode.episodeNumber}`">
+        <nuxt-link class="text-link underline hover:no-underline" :to="`/episode/${episode.episodeNumber}`">
           {{ episode.title }}
-        </a>
+        </nuxt-link>
       </h1>
       <time class="text-sm" :datetime="episode.date">{{ getFormatedDate(episode.date) }}</time>
       <p class="mt-2">{{ episode.description }}</p>

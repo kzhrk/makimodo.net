@@ -6,7 +6,7 @@
     <div class="px-12 py-16 bg-slate-400 bg-opacity-75">
       <div class="w-10/12 mx-auto">
         <h1 class="text-3xl font-bold">
-          <a class="font-normal" href="/">インターネットを巻き戻す Podcast</a>
+          <nuxt-link class="font-normal" href="/">インターネットを巻き戻す Podcast</nuxt-link>
         </h1>
         <p class="mt-2 text-sm">インターネットのニュースや雑談を話す Podcast です</p>
       </div>
