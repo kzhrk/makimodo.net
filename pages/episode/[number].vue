@@ -14,36 +14,16 @@ useHead(() => ({
   meta: [{
     name: 'description',
     content: description
-  },{
-    name: 'twitter:card',
-    content: 'summary_large_image'
   }, {
     name: 'twitter:description',
     content: description
   }, {
-    name: 'twitter:image',
-    content: 'https://makimodo.net/images/logo.png'
-  }, {
     name: 'twitter:title',
     content: title
   },{
-    property: 'og:image',
-    content: 'https://makimodo.net/images/logo.png'
-  },{
-    property: 'og:site_name',
-    content: 'インターネットを巻き戻すPodcast'
-  },{
-    property: 'og:type',
-    content: 'blog'
-  },{
     property: 'og:url',
-    content: 'https://makimodo.net/'
+    content: `https://makimodo.net/episode/${route.params.number}`
   }],
-  link: [{
-    rel: 'alternate',
-    type: 'application/rss+xml',
-    href: 'https://makimodo.net/feed.xml'
-  }]
 }))
 
 function getSecondsFromTime(time: string) {
