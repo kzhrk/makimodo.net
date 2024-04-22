@@ -5,9 +5,9 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 
 const template = readFileSync('./scripts/feedTemplate.xml', {}).toString();
 
-const numbers = Array(readdirSync('./posts').length).fill(0).map((_, i) => i + 1).reverse();
+const numbers = Array(readdirSync('./episodes').length).fill(0).map((_, i) => i + 1).reverse();
 const episodes = numbers.map(p => {
-  const path = `./posts/${p}.md`;
+  const path = `./episodes/${p}.md`;
   const file = readFileSync(path);
   const { metadata, content } = parseMD(file.toString());
   const html = parse(content);

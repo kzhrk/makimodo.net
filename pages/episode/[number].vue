@@ -2,7 +2,7 @@
 import { format } from 'date-fns'
 
 const route = useRoute();
-const res = await useFetch(`/api/posts/${route.params.number}`);
+const res = await useFetch(`/api/episodes/${route.params.number}`);
 const data = res.data;
 const formatedDate = format(data.value.date, 'yyyy年MM月dd日');
 const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${ data.value.audioFilePath }`
