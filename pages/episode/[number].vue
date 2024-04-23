@@ -1,69 +1,74 @@
 <script lang="ts" setup>
-import { format } from 'date-fns'
+import { format } from "date-fns";
 
 const route = useRoute();
 const res = await useFetch(`/api/episodes/${route.params.number}`);
 const data = res.data;
-const formatedDate = format(data.value.date, 'yyyy年MM月dd日');
-const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${ data.value.audioFilePath }`
+const formatedDate = format(data.value.date, "yyyy年MM月dd日");
+const audioUrl = `https://d2pbwgl7adh1pt.cloudfront.net${data.value.audioFilePath}`;
 
 const title = `${data.value.title} | インターネットを巻き戻す Podcast`;
 const description = data.value.description;
 useHead(() => ({
-  title,
-  meta: [{
-    name: 'description',
-    content: description
-  }, {
-    name: 'twitter:description',
-    content: description
-  }, {
-    name: 'twitter:title',
-    content: title
-  },{
-    property: 'og:url',
-    content: `https://makimodo.net/episode/${route.params.number}`
-  }],
-}))
+	title,
+	meta: [
+		{
+			name: "description",
+			content: description,
+		},
+		{
+			name: "twitter:description",
+			content: description,
+		},
+		{
+			name: "twitter:title",
+			content: title,
+		},
+		{
+			property: "og:url",
+			content: `https://makimodo.net/episode/${route.params.number}`,
+		},
+	],
+}));
 
 function getSecondsFromTime(time: string) {
-  const [seconds, minutes, hours] = time.split(':').reverse();
-  let currentTime = Number.parseInt(seconds, 10);
-  if (minutes) currentTime += 60 * Number.parseInt(minutes, 10);
-  if (hours) currentTime += 60 * 60 * Number.parseInt(hours, 10);
-  return currentTime;
+	const [seconds, minutes, hours] = time.split(":").reverse();
+	let currentTime = Number.parseInt(seconds, 10);
+	if (minutes) currentTime += 60 * Number.parseInt(minutes, 10);
+	if (hours) currentTime += 60 * 60 * Number.parseInt(hours, 10);
+	return currentTime;
 }
 
 onMounted(() => {
-  const audio = document.querySelector('audio');
-  const anchors = document.querySelector('table')?.querySelectorAll('a');
+	const audio = document.querySelector("audio");
+	const anchors = document.querySelector("table")?.querySelectorAll("a");
 
-  window.twttr.widgets.load();
+	window.twttr.widgets.load();
 
-  // GTM
-  if (audio) {
-    const episode = route.params.number;
-    audio.addEventListener('play', () => {
-      window.dataLayer.push({
-        episode: episode,
-        event: 'play_episode'
-      });
-    });
-  }
+	// GTM
+	if (audio) {
+		const episode = route.params.number;
+		audio.addEventListener("play", () => {
+			window.dataLayer.push({
+				episode: episode,
+				event: "play_episode",
+			});
+		});
+	}
 
-  // Chapters
-  if (anchors && audio) {
-    for (const anchor of anchors) {
-      anchor.addEventListener('click', (event) => {
-        const target = event.target as HTMLAnchorElement;
-        const time = target.href.replace(/.*#t=([\d:]+).*/, '$1');
-        const currentTime = getSecondsFromTime(time);
-        audio.currentTime = currentTime;
-        audio.play();
-      }) 
-    }
-  }
-})
+	// Chapters
+	if (anchors && audio) {
+		for (const anchor of anchors) {
+			anchor.addEventListener("click", (event) => {
+				const target = event.target as HTMLAnchorElement;
+				const time = target.href.replace(/.*#t=([\d:]+).*/, "$1");
+				const currentTime = getSecondsFromTime(time);
+				audio.currentTime = currentTime;
+				audio.play();
+			});
+		}
+	}
+});
 </script>
 
 <template>

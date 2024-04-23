@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { format } from 'date-fns'
+import { format } from "date-fns";
 
-const res = await useFetch('/api/episodes');
+const res = await useFetch("/api/episodes");
 const data = res.data;
 
 function getFormatedDate(dateString: string) {
-  return format(dateString, 'yyyy年M月d日');
+	return format(dateString, "yyyy年M月d日");
 }
 </script>
 
