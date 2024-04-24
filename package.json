@@ -8,7 +8,8 @@
 		"generate": "npm run create-feed && nuxt generate",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
-		"create-feed": "ts-node ./scripts/createFeed.mjs"
+		"create-feed": "ts-node ./scripts/createFeed.mjs",
+		"format": "biome format --write ."
 	},
 	"dependencies": {
 		"nuxt": "^3.11.2",
