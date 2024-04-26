@@ -22,7 +22,7 @@ function getFormatedDate(dateString: string) {
       <ul class="mt-2 flex gap-5">
         <li v-for="(id, index) in episode.actorIds" :key="index">
           <figure class="text-center">
-            <img class="w-10 rounded-full" :src="`/images/actors/${id}.jpg`" :alt="`${id} のイメージ`">
+            <img class="w-10 rounded-full" :src="`/images/actors/${id}.webp`" :alt="`${id} のイメージ`">
           </figure>
         </li>
       </ul>
