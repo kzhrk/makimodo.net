@@ -27,16 +27,12 @@
           </a>
         </div>
       </div>
-      <div class="sm:flex-1">
-        <p>
-          新しいエピソードの配信を購読できます。
-        </p>
-        <ul class="mt-2 ml-4 list-disc flex flex-col gap-2">
-          <li><a class="text-link underline hover:no-underline" href="https://podcasts.apple.com/jp/podcast/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%92%E5%B7%BB%E3%81%8D%E6%88%BB%E3%81%99podcast/id1554626944">Apple Podcastで購読</a></li>
-          <li><a class="text-link underline hover:no-underline" href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cubWFraW1vZG8ubmV0L2ZlZWQueG1s">Google Podcastで購読</a></li>
-          <li><a class="text-link underline hover:no-underline" href="/feed.xml">RSSで購読</a></li>
-        </ul>
-      </div>
+			<dl class="sm:flex-1 flex flex-col gap-2">
+				<dt>新しいエピソードの配信を購読できます。</dt>
+				<dd><a class="text-link underline hover:no-underline" href="https://podcasts.apple.com/jp/podcast/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%92%E5%B7%BB%E3%81%8D%E6%88%BB%E3%81%99podcast/id1554626944">Apple Podcastで購読</a></dd>
+				<dd><a class="text-link underline hover:no-underline" href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cubWFraW1vZG8ubmV0L2ZlZWQueG1s">Google Podcastで購読</a></dd>
+				<dd><a class="text-link underline hover:no-underline" href="/feed.xml">RSSで購読</a></dd>
+			</dl>
     </div>
     <p class="mt-16 text-sm text-center">
       &copy; 2021 
