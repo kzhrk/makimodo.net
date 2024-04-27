@@ -29,7 +29,7 @@ export default defineNuxtConfig({
 		},
 	},
 	ssr: true,
-	modules: ["@nuxtjs/tailwindcss"],
+	modules: ["@nuxtjs/tailwindcss", "@nuxtjs/sitemap"],
 	generate: {
 		routes,
 	},
