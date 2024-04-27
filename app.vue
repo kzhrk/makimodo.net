@@ -48,6 +48,10 @@ useHead(() => ({
 			type: "application/rss+xml",
 			href: "https://makimodo.net/feed.xml",
 		},
+		{
+			rel: "preconnect",
+			href: "https://www.googletagmanager.com",
+		},
 	],
 }));
 </script>
