@@ -48,7 +48,7 @@
 <style scoped>
 header {
   @apply text-white;
-  background-image: url(/images/artwork.png);
+  background-image: url(/images/artwork.webp);
   background-size: cover;
   background-position: center;
   text-shadow: 0 1px 5px black;
