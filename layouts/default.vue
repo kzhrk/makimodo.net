@@ -5,10 +5,10 @@
   <header>
     <div class="px-6 py-8 sm:px-12 sm:py-16 bg-slate-400 bg-opacity-75">
       <div class="w-auto sm:w-10/12 mx-auto">
-        <h1 class="text-3xl font-bold">
+        <h1 class="text-xl sm:text-3xl font-bold">
           <nuxt-link class="font-normal" href="/">インターネットを巻き戻す Podcast</nuxt-link>
         </h1>
-        <p class="mt-2 text-sm">インターネットのニュースや雑談を話す Podcast です</p>
+        <p class="hidden sm:block mt-2 text-sm">インターネットのニュースや雑談を話す Podcast です</p>
       </div>
     </div>
   </header>
