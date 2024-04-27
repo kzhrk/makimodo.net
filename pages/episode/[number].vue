@@ -72,8 +72,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="p-12">
-    <h1 class="text-3xl text-center">{{ data.title }}</h1>
+  <section class="px-6 py-12 sm:p-12">
+    <h1 class="text-2xl sm:text-3xl text-center">{{ data.title }}</h1>
     <div class="mt-4 text-center text-sm">
       <time :datetime="data.date">{{ formatedDate }}</time>
     </div>

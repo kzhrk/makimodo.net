@@ -3,8 +3,8 @@
 
 <template>
   <header>
-    <div class="px-12 py-16 bg-slate-400 bg-opacity-75">
-      <div class="w-10/12 mx-auto">
+    <div class="px-6 py-8 sm:px-12 sm:py-16 bg-slate-400 bg-opacity-75">
+      <div class="w-auto sm:w-10/12 mx-auto">
         <h1 class="text-3xl font-bold">
           <nuxt-link class="font-normal" href="/">インターネットを巻き戻す Podcast</nuxt-link>
         </h1>
@@ -12,12 +12,12 @@
       </div>
     </div>
   </header>
-  <main class="w-10/12 mx-auto">
+  <main class="w-auto sm:w-10/12 mx-auto">
     <nuxt-page />
   </main>
-  <footer class="pt-16 px-12 pb-8 bg-gray-200">
-    <div class="w-10/12 mx-auto flex gap-12">
-      <div class="flex-1">
+  <footer class="px-6 py-8 sm:px-12 sm:py-16 bg-gray-200">
+    <div class="w-auto sm:w-10/12 mx-auto flex flex-wrap gap-12">
+      <div class="sm:flex-1">
         <p>インターネットを巻き戻すPodcast への感想や質問などは、Twitterでハッシュタグ <a class="text-link underline hover:no-underline" href="https://twitter.com/search?q=%23makimodo">#makimodo</a> をご利用ください。</p>
         <div class="mt-4">
           <a
@@ -27,7 +27,7 @@
           </a>
         </div>
       </div>
-      <div class="flex-1">
+      <div class="sm:flex-1">
         <p>
           新しいエピソードの配信を購読できます。
         </p>
