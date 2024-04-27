@@ -95,7 +95,7 @@ onMounted(() => {
       <ul class="flex gap-5">
         <li v-for="(id, index) in data.actorIds" :key="index">
           <figure class="text-center">
-            <img class="w-16 rounded-full" :src="`/images/actors/${id}.webp`" :alt="`${id} のイメージ`">
+            <img class="w-16 rounded-full" width="64" height="64" loading="lazy" :src="`/images/actors/${id}.webp`" :alt="`${id} のイメージ`">
             <figcaption class="mt-1 text-sm">{{ id }}</figcaption>
           </figure>
         </li>
