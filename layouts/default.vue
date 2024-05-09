@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <template>
   <header>
     <div class="px-6 py-8 sm:px-12 sm:py-16 bg-slate-800 bg-opacity-75">
