@@ -18,10 +18,12 @@ function getFormatedDate(dateString: string) {
     </h1>
     <time class="text-sm" :datetime="episode.date">{{ getFormatedDate(episode.date) }}</time>
     <p class="mt-2">{{ episode.description }}</p>
-    <div class="mt-2 flex gap-5">
-      <figure v-for="(id, index) in episode.actorIds" :key="index" class="text-center">
-        <img class="w-10 rounded-full" width="40" height="40" loading="lazy" :src="`/images/actors/${id}.webp`" :alt="`${id} のイメージ`">
-      </figure>
-    </div>
+    <ul class="mt-2 ml-1 flex">
+			<li v-for="(id, index) in episode.actorIds" :key="index" class="-ml-1">
+				<figure>
+					<img class="w-10 rounded-full" width="40" height="40" loading="lazy" :src="`/images/actors/${id}.webp`" :alt="`${id} のイメージ`">
+				</figure>
+			</li>
+    </ul>
   </section>
 </template>
