@@ -12,10 +12,10 @@
   <main class="w-auto sm:w-10/12 mx-auto">
     <nuxt-page />
   </main>
-  <footer class="px-6 py-8 sm:px-12 sm:py-16 bg-gray-200">
+  <footer class="px-6 py-8 sm:px-12 sm:py-16 bg-gray-200 dark:bg-gray-700">
     <div class="w-auto sm:w-10/12 mx-auto flex flex-wrap gap-12">
       <div class="sm:flex-1">
-        <p>インターネットを巻き戻すPodcast への感想や質問などは、Twitterでハッシュタグ <a class="text-link underline hover:no-underline" href="https://twitter.com/search?q=%23makimodo">#makimodo</a> をご利用ください。</p>
+        <p>インターネットを巻き戻すPodcast への感想や質問などは、Twitterでハッシュタグ <a class="link underline hover:no-underline" href="https://twitter.com/search?q=%23makimodo">#makimodo</a> をご利用ください。</p>
         <div class="mt-4">
           <a
             class="twitter-share-button"
@@ -26,14 +26,14 @@
       </div>
 			<dl class="sm:flex-1 flex flex-col gap-2">
 				<dt>新しいエピソードの配信を購読できます。</dt>
-				<dd><a class="text-link underline hover:no-underline" href="https://podcasts.apple.com/jp/podcast/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%92%E5%B7%BB%E3%81%8D%E6%88%BB%E3%81%99podcast/id1554626944">Apple Podcastで購読</a></dd>
-				<dd><a class="text-link underline hover:no-underline" href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cubWFraW1vZG8ubmV0L2ZlZWQueG1s">Google Podcastで購読</a></dd>
-				<dd><a class="text-link underline hover:no-underline" href="/feed.xml">RSSで購読</a></dd>
+				<dd><a class="link underline hover:no-underline" href="https://podcasts.apple.com/jp/podcast/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%92%E5%B7%BB%E3%81%8D%E6%88%BB%E3%81%99podcast/id1554626944">Apple Podcastで購読</a></dd>
+				<dd><a class="link underline hover:no-underline" href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cubWFraW1vZG8ubmV0L2ZlZWQueG1s">Google Podcastで購読</a></dd>
+				<dd><a class="link underline hover:no-underline" href="/feed.xml">RSSで購読</a></dd>
 			</dl>
     </div>
     <p class="mt-16 text-sm text-center">
       &copy; 2021 
-      <a class="text-link underline hover:no-underline" href="https://makimodo.net/">インターネットを巻き戻す Podcast</a>
+      <a class="link underline hover:no-underline" href="https://makimodo.net/">インターネットを巻き戻す Podcast</a>
     </p>
   </footer>
 </template>

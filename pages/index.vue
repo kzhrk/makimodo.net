@@ -12,7 +12,7 @@ function getFormatedDate(dateString: string) {
 <template>
   <section class="px-6 sm:px-12 my-12" v-for="(episode, i) in data" :key="i">
     <h1 class="text-2xl">
-      <nuxt-link class="text-link underline hover:no-underline" :to="`/episode/${episode.episodeNumber}`">
+      <nuxt-link class="link underline hover:no-underline" :to="`/episode/${episode.episodeNumber}`">
         {{ episode.title }}
       </nuxt-link>
     </h1>

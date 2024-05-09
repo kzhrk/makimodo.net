@@ -89,7 +89,7 @@ onMounted(() => {
       controls
     />
     <div class="mt-4 text-right text-sm">
-      <a class="text-link underline hover:no-underline" :href="audioUrl">MP3 ファイルをダウンロード</a>
+      <a class="link underline hover:no-underline" :href="audioUrl">MP3 ファイルをダウンロード</a>
     </div>
     <section class="mt-8">
       <h2 class="mb-4 text-xl">内容紹介</h2>
@@ -143,10 +143,10 @@ onMounted(() => {
   @apply mt-2 list-disc;
 }
 .html ul li::marker {
-  @apply text-gray-700;
+  @apply text-gray-700 dark:text-gray-200;
 }
 .html a {
-  @apply text-link underline hover:no-underline;
+  @apply text-link dark:text-blue-100 underline hover:no-underline;
 }
 </style>
 
