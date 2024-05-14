@@ -153,15 +153,15 @@ onMounted(() => {
 <style scoped>
 .chapter-table th,
 .chapter-table td {
-  @apply p-2 border border-gray-400;
+  @apply px-4 py-2 border border-gray-400;
 }
 .chapter-table thead {
-  @apply bg-gray-200 text-left;
+  @apply bg-gray-200 dark:bg-gray-950 text-left dark:text-white;
 }
 .chapter-table tbody tr:nth-child(even) {
-  @apply bg-gray-50;
+  @apply bg-gray-50 dark:bg-gray-900;
 }
 .chapter-table a {
-  @apply text-link underline hover:no-underline;
+  @apply text-link dark:text-blue-100 underline hover:no-underline;
 }
 </style>
