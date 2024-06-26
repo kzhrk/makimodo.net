@@ -41,6 +41,10 @@ useHead(() => ({
 			property: "og:url",
 			content: "https://makimodo.net/",
 		},
+		{
+			property: 'apple-itunes-app',
+			content: 'app-id=1554626944'
+		}
 	],
 	link: [
 		{
