@@ -42,7 +42,7 @@ useHead(() => ({
 			content: "https://makimodo.net/",
 		},
 		{
-			property: 'apple-itunes-app',
+			name: 'apple-itunes-app',
 			content: 'app-id=1554626944'
 		}
 	],
