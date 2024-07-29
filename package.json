@@ -22,7 +22,7 @@
 		"@nuxtjs/tailwindcss": "^6.11.4",
 		"date-fns": "^3.6.0",
 		"ejs": "^3.1.10",
-		"marked": "^13.0.1",
+		"marked": "^13.0.3",
 		"parse-md": "^3.0.3",
 		"ts-node": "^10.9.2"
 	}
